@@ -1,0 +1,88 @@
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+.container{
+
+    display: flex;
+    position: relative;
+    height: 100%;
+    margin: 0;
+    justify-content: space-around;
+    background-color: dimgrey;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url("/media/images/ghostlight.jpg");
+    padding-right: 11%;
+    padding-left: 11%;
+}
+
+.fBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 300%;
+    border: 1px solid whitesmoke;
+    align-self: center;
+    height: 30%;
+    width: 30%;
+    color: white;
+    background: rgba(207, 218, 221,0.3);
+
+
+}
+#binder {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+}
+
+#stgd{
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+
+#splash{
+    position: absolute;
+    bottom:5%;
+    right: 15%;
+
+}
+
+#bulk{
+    position: absolute;
+    bottom: 5%;
+    left:15%;
+}
+
+.console {
+    display: flex;
+    height: 35%;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+    font-family: 'Vollkorn', serif;
+
+    overflow: hidden;
+
+}
+
+.console_inp{
+    font: 25pt bold;
+    height: 30px;
+}
+
+
+#form_inp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

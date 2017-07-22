@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'core/css/makerStyle.css' %}">
+    <style>@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+    @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Vollkorn');
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/core/js/maker.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+
+
+    <div class="fBox" name="bulk" id="bulk">Bulk Files</div>
+
+
+    <div class="fBox" id="binder">Binder
+    </div>
+
+
+    <div class="fBox" name="stgd" id="stgd">Study Guide</div>
+
+
+    <div class="fBox" name="splash" id="splash">Splash Image</div>
+
+
+</div>
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="console" id="console">
+        <br>
+
+
+        <div>Show Name:<br>
+            <input type="text" name="name" class="console_inp" id="name" placeholder="Play Title" required>
+            <br>
+            File Tree Title:<br>
+            <input type="text" name="tree" class="console_inp" id="tree" placeholder="File Tree Branch" required>
+            <br>
+            Theatre:<br>
+            <input type="text" name="house" class="console_inp" id="house" placeholder="Theatre">
+            <br>
+        </div>
+        <div>Production Dates:<br>
+            <input type="text" name="prod_date" class="console_inp" id="prod_date" placeholder="Production Dates">
+            <br>
+            Run Dates:<br>
+            <input type="text" name="run_date" class="console_inp" id="run" placeholder="Dates of Run">
+            <br>
+            Playwright:<br>
+            <input type="text" name="wright" class="console_inp" id="wright" placeholder="Playwright">
+            <br>Director:<br>
+
+            <input type="text" name="director" class="console_inp" id="director" placeholder="Director">
+            <br>
+
+            <input type="file" name="binder" hidden id="hidden_binder">
+            <input type="file" name="stgd" hidden id="hidden_stgd">
+            <input type="file" name="splash" hidden id="hidden_splash">
+            <input type="file" name="bulk[]" hidden id="hidden_bulk">
+        </div>
+
+        <button type="submit" value="Submit" id="go_button">And...GO!</button>
+        <br>
+    </div>
+</form>
+</body>
+</html>
