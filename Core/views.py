@@ -7,8 +7,7 @@ from .models import Media, Show
 
 def index(request):
     shows = Show.objects.all().order_by( '-id' )
-    art = Media.objects.filter( type='RLR', show__tree='GOC' )
-    return render( request, 'core/index.html', {'shows': shows} )
+    return render( request, 'core/index.html', {'shows': Show.objects.all()} )
 
 
 def maker(request):
@@ -25,7 +24,9 @@ def maker(request):
         show.director = request.POST.get( 'director' )
         show.wright = request.POST.get( 'wright' )
         show.binder = request.FILES.get( 'binder', None )
+        show.binder_img = request.FILES.get('binder_img', None)
         show.stgd = request.FILES.get( 'stgd', None )
+        show.stgd_img = request.FILES.get('stgd_img', None)
         show.splash = request.FILES.get( 'splash', None )
         show.medias.type = request.FILES.get( 'bulk', None)
         show.save()

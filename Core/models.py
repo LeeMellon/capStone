@@ -7,9 +7,15 @@ def bulkUpload_handler(media, filename):
 def stgdUpload_handler(show, filename):
     stgd_path = "{0}/{0}_{1}/{2}".format( show.tree, 'stgd', filename)
     return stgd_path
+def stgdImgUpload_handler(show, filename):
+    stgdImg_path = "{0}/{0}_{1}/{2}".format( show.tree, 'stgd_img', filename)
+    return stgdImg_path
 def binderUpload_handler(show, filename):
     binder_path = "{0}/{0}_{1}/{2}".format(show.tree,'binder', filename)
     return binder_path
+def binderImgUpload_handler(show, filename):
+    binderImg_path = "{0}/{0}_{1}/{2}".format(show.tree,'binder_img', filename)
+    return binderImg_path
 def splashUpload_handler(show, filename):
     splash_path = "{0}/{0}_{1}/{2}".format(show.tree, 'splash', filename)
     return splash_path
@@ -24,7 +30,9 @@ class Show(models.Model):
     director = models.CharField(max_length=100, blank=True, null=True)
     wright = models.CharField(max_length=100, blank=True, null=True)
     binder = models.FileField(blank=True, null=True, help_text="PDF", upload_to=binderUpload_handler)
+    binder_img = models.FileField(blank=True, null=True, upload_to=binderImgUpload_handler)
     stgd = models.FileField(blank=True, null=True, upload_to=stgdUpload_handler)
+    stgd_img = models.FileField(blank=True, null=True, upload_to=stgdImgUpload_handler)
     splash = models.ImageField(blank=True, null=True, upload_to=splashUpload_handler)
 
 
@@ -45,20 +53,20 @@ class Media(models.Model):
     show = models.ForeignKey(Show, related_name='medias')
     type = models.CharField(max_length=100, choices=UPLOAD_TYPES)
 
-    def sort(self):
-        for i in target:
-            if i in ('/.txt', '/.doc', '/.pdf', '/.docx'):
-                self.type = 'text'
-            elif i == '/.jpeg' or '/.jpg' or '/.png' or '/.gif' or '/.dng':
-                self.type = 'roller'
-            elif i == '/.mp3' or '/.wav':
-                self.type = 'audio'
-            elif i == '/.avi' or '/.mov' or '/.flv' or '/.mp4' or '/.wmv':
-                self.type = 'video'
-            else:
-                return "file not supported"
-
-
-    def __str__(self):
-        return "{} is a {} file associated with {} show".format(self.name, self.type, self.show)
-
+    # def sort(self):
+    #     for i in target:
+    #         if i in ('/.txt', '/.doc', '/.pdf', '/.docx'):
+    #             self.type = 'text'
+    #         elif i == '/.jpeg' or '/.jpg' or '/.png' or '/.gif' or '/.dng':
+    #             self.type = 'roller'
+    #         elif i == '/.mp3' or '/.wav':
+    #             self.type = 'audio'
+    #         elif i == '/.avi' or '/.mov' or '/.flv' or '/.mp4' or '/.wmv':
+    #             self.type = 'video'
+    #         else:
+    #             return "file not supported"
+    #
+    #
+    # def __str__(self):
+    #     return "{} is a {} file associated with {} show".format(self.name, self.type, self.show)
+    #

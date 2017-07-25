@@ -37,18 +37,54 @@ html, body {
 
 
 }
-#binder {
+#binder_container {
     position: absolute;
     top: 5%;
     left: 15%;
 }
 
-#stgd{
+#binder{
+    border: groove;
+    display: flex;
+    flex-grow: 1;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    padding-left: 50px;
+}
+
+#binder_img{
+    display: flex;
+    border: groove;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    padding-left: 40px;
+}
+#stgd_container{
     position: absolute;
     top: 5%;
     right: 15%;
 }
+#stgd {
+    border: groove;
+    display: flex;
+    flex-grow: 1;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    padding-left: 50px;
+}
 
+#stgd_img{
+    display: flex;
+    border: groove;
+    flex-grow: 1;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    padding-left: 50px;
+}
 #splash{
     position: absolute;
     bottom:5%;

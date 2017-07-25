@@ -21,11 +21,17 @@
     <div class="fBox" name="bulk" id="bulk">Bulk Files</div>
 
 
-    <div class="fBox" id="binder">Binder
+    <div class="fBox" id="binder_container">
+
+        <div class="binder" id="binder" name="binder">Binder</div>
+        <div class="binder_img" name= "binder_img" id="binder_img">Binder Image</div>
     </div>
 
 
-    <div class="fBox" name="stgd" id="stgd">Study Guide</div>
+    <div class="fBox" id="stgd_container">
+        <div class="stgd" name="stgd" id="stgd" >Study Guide</div>
+        <div class="stgd_img" name="stgd_img" id="stgd_img">Study Guide Image</div>
+    </div>
 
 
     <div class="fBox" name="splash" id="splash">Splash Image</div>
@@ -35,9 +41,10 @@
 
 
 <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+{% csrf_token %}
     <div class="console" id="console">
         <br>
+{#    {% csrf_token %}#}
 
 
         <div>Show Name:<br>
@@ -65,6 +72,8 @@
 
             <input type="file" name="binder" hidden id="hidden_binder">
             <input type="file" name="stgd" hidden id="hidden_stgd">
+            <input type="file" name="binder_img" hidden id="hidden_binder_img">
+            <input type="file" name="stgd_img" hidden id="hidden_stgd_img">
             <input type="file" name="splash" hidden id="hidden_splash">
             <input type="file" name="bulk[]" hidden id="hidden_bulk">
         </div>

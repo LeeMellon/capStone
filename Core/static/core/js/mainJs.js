@@ -3,13 +3,13 @@
  */
 $(document).ready(function() {
 
-
-    $(".binder").click(function () {
-        console.log('click')
-        window.open("media/invasion/text/invasion!Binder.pdf", "Binder");
-    });
-    // $('.roller').each(function () {
-    //     var children = $(this).children();
+    //
+    // $(".binder").click(function () {
+    //     console.log('click')
+    //     window.open("media/invasion/text/invasion!Binder.pdf", "Binder");
+    // });
+    // // $('.roller').each(function () {
+    // //     var children = $(this).children();
     //     console.log(children);
     //     var i = 0;
     //     var timer = setInterval(function () {

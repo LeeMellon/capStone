@@ -27,14 +27,26 @@ nav a{
 }
 
 .sect{
+    display: flex;
     margin: 0;
     height: 100%;
+    align-content: space-around;
     background-color: dimgrey;
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
+.annotation{
+    padding-top: 50px;
+    display: flex;
+    font-size: 20pt;
+    font-family: 'Old Standard TT', serif;
+    color: lightblue;
+    text-align: center ;
+}
+
+
 
 .subSect {
     position:relative;
@@ -61,13 +73,7 @@ nav a{
     background-image: url("/media/images/ghostlight.jpg");
 }
 
-.sectOne{
-    background-image: url("/media/GOC/Splash/God_of_Carnage_WEB.jpg");
-}
 
-.sectTwo{
-    background-image: url("/media/invasion/Splash/invasionWeb.jpg");
-}
 .secFinal{
 
 background-image: url("/media/images/DeadEnd1.jpg");

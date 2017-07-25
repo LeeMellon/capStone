@@ -1,29 +1,28 @@
+//
+//
+// $("html").on("dragover", function(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     $(this).addClass('dragging');
+// });
+//
+// $("html").on("dragleave", function(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     $(this).removeClass('dragging');
+// });
+//
+// $("html").on("drop", function(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//
+// });
 
 
-$("html").on("dragover", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    $(this).addClass('dragging');
-});
-
-$("html").on("dragleave", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    $(this).removeClass('dragging');
-});
-
-$("html").on("drop", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-});
+$(document).ready(function () {
 
 
-
-$(document).ready(function() {
-
-
-     $('#binder').on("dragover drop", function (e) {
+    $('#binder').on("dragover drop", function (e) {
         e.preventDefault();
     }).on("drop", function (e) {
         $("#hidden_binder")
@@ -39,6 +38,23 @@ $(document).ready(function() {
             .closest("form")
 
     });
+
+    $('#binder_img').on("dragover drop", function (e) {
+        e.preventDefault();
+    }).on("drop", function (e) {
+        $("#hidden_binder_img")
+            .prop("files", e.originalEvent.dataTransfer.files)
+            .closest("form")
+    });
+
+    $('#stgd_img').on("dragover drop", function (e) {
+        e.preventDefault();
+    }).on("drop", function (e) {
+        $("#hidden_stgd_img")
+            .prop("files", e.originalEvent.dataTransfer.files)
+            .closest("form")
+    });
+
 
     $('#splash').on("dragover drop", function (e) {
         e.preventDefault();
@@ -56,5 +72,5 @@ $(document).ready(function() {
             .closest("form")
     });
 
-});
+    });
 
