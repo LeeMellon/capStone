@@ -37,13 +37,32 @@ nav a{
     background-attachment: fixed;
     background-position: center;
 }
-.annotation{
+.annotation_left{
+    position: absolute;
     padding-top: 50px;
+    padding-left: 1%;
     display: flex;
+    /*align-items: flex-start;*/
+    flex-direction: column;
     font-size: 20pt;
     font-family: 'Old Standard TT', serif;
     color: lightblue;
-    text-align: center ;
+    text-align: left;
+}
+.annotation_right{
+    position: absolute;
+    padding-top: 50px;
+    display: flex;
+    padding-left: 83%;
+    /*align-items: flex-end;*/
+    flex-direction: column;
+    /*justify-content: flex-start;*/
+    font-size: 20pt;
+    font-family: 'Old Standard TT', serif;
+    color: lightblue;
+    text-align: right;
+
+    /*align-content: flex-start;*/
 }
 
 

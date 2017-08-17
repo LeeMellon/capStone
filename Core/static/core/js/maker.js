@@ -19,17 +19,17 @@
 // });
 
 
-$(document).ready(function () {
+$(document).ready(function () {         //loading js //
 
-
+//binder div in maker.html. Keeps it from opening pdf on drop
     $('#binder').on("dragover drop", function (e) {
         e.preventDefault();
-    }).on("drop", function (e) {
+    }).on("drop", function (e) {        //sends to hidden div
         $("#hidden_binder")
             .prop("files", e.originalEvent.dataTransfer.files)
             .closest("form")
     });
-
+//study guide div
     $('#stgd').on("dragover drop", function (e) {
         e.preventDefault();
     }).on("drop", function (e) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
             .closest("form")
 
     });
-
+//binder image div
     $('#binder_img').on("dragover drop", function (e) {
         e.preventDefault();
     }).on("drop", function (e) {
@@ -46,7 +46,7 @@ $(document).ready(function () {
             .prop("files", e.originalEvent.dataTransfer.files)
             .closest("form")
     });
-
+//study guide image div
     $('#stgd_img').on("dragover drop", function (e) {
         e.preventDefault();
     }).on("drop", function (e) {
@@ -55,7 +55,7 @@ $(document).ready(function () {
             .closest("form")
     });
 
-
+//splash image div
     $('#splash').on("dragover drop", function (e) {
         e.preventDefault();
     }).on("drop", function (e) {
@@ -63,7 +63,7 @@ $(document).ready(function () {
             .prop("files", e.originalEvent.dataTransfer.files)
             .closest("form")
     });
-
+//bulk files div
     $('#bulk').on("dragover drop", function (e) {
         e.preventDefault();
     }).on("drop", function (e) {

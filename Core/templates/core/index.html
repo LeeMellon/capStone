@@ -13,11 +13,11 @@
     <title>Title</title>
 </head>
 <body>
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-</nav>
+{#<nav>#}
+{#    <a href="#">Home</a>#}
+{#    <a href="#">About</a>#}
+{#    <a href="#">Contact</a>#}
+{#</nav>#}
 <div class="sect sectZero"></div>
 <div class="subSect">
     <p class="caption">
@@ -29,29 +29,34 @@
         Ian Goodrich
     </p>
 </div>
-
-
+{#TODO: rewrite caption#}
+{##}
 {% for show in shows %}
     <div class="sect" id="{{ show.tree }}" style="background-image: url('{{ show.splash.url }}');">
-       <br>
-    <br>
-        <div class="annotation">
-        {% if show.name %}
-        <span class="showName" id="{{ show.name }}">{{ show.wright}}'s {{ show.name }}</span>
-        {% endif %}
         <br>
-        {% if show.director %}
-        <p class="director" id="{{ show.tree }}{{ show.director }}">Directed by{{ show.director }}</p>
-        {% endif %}
         <br>
-        {% if show.house %}
-        <p class="house" id="{{ show.tree }}{{ show.house }}">Performed at {{ show.house }}</p>
-        {% endif %}
-        <br>
-        {% if show.run_date %}
-        <p>{{ show.run_date }}</p>
-        {% endif %}
-        <br>
+        <div class="annotation_left">
+            <div>
+                {% if show.name %}
+                    <h5 class="showName" id="{{ show.name }}">{{ show.wright }}'s {{ show.name }}</h5>
+                {% endif %}
+                {% if show.director %}
+                    <h5 class="director" id="{{ show.tree }}{{ show.director }}"> Directed by{{ show.director }}</h5>
+                {% endif %}
+            </div>
+        </div>
+            <br>
+        <div class="annotation_right">
+            <div>
+                {% if show.house %}
+                    <h5 class="house" id="{{ show.tree }}{{ show.house }}">Performed at {{ show.house }}</h5>
+                {% endif %}
+
+                {% if show.run_date %}
+                    <h5>{{ show.run_date }}</h5>
+                {% endif %}
+            </div>
+            <br>
         </div>
     </div>
 
@@ -59,7 +64,8 @@
 
         <div class="roller" id="roller1{{ show.tree }}">
 
-            <img class="roller_img" id="roller1_img_{{ show.tree }}" src="{{ show__media.type.url }}">
+            <img src="/media/{{ show.tree }}/{{ show.tree }}_images/1.jpg" class="roller_img"
+                 id="roller1_img_{{ show.tree }}">
 
         </div>
 
@@ -79,7 +85,8 @@
 
         <div class="roller" id="roller2{{ show.tree }}">
 
-            <img class="roller_img" id="roller2_img_{{ show.tree }}" src="{{ show__media.type.url }}">
+            <img src="/media/{{ show.tree }}/{{ show.tree }}_images/2.jpg" class="roller_img"
+                 id="roller2_img_{{ show.tree }}">
 
         </div>
     </div>
@@ -98,11 +105,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{% static 'core/js/mainJs.js' %}"></script>
 <script>
-    function openBinder (url) {
-         window.open(url, "binder");
+    function openBinder(url) {
+        window.open(url, "binder");
     }
-    function openStgd (url) {
-         window.open(url, "stgd");
+    function openStgd(url) {
+        window.open(url, "stgd");
     }
 </script>
 

@@ -3,51 +3,41 @@
 
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'core/css/makerStyle.css' %}">
-    <style>@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
-    @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Vollkorn');
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/static/core/js/maker.js"></script>
-    <title>Title</title>
-</head>
 <body>
 
+
 <div class="container">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="fBox" name="bulk" id="bulk">Bulk Files</div>
 
 
-    <div class="fBox" name="bulk" id="bulk">Bulk Files</div>
+        <div class="fBox" id="binder_container">
+
+            <div class="binder" id="binder" name="binder">Binder</div>
+            <div class="binder_img" name= "binder_img" id="binder_img">Binder Image</div>
+        </div>
 
 
-    <div class="fBox" id="binder_container">
-
-        <div class="binder" id="binder" name="binder">Binder</div>
-        <div class="binder_img" name= "binder_img" id="binder_img">Binder Image</div>
-    </div>
-
-
-    <div class="fBox" id="stgd_container">
-        <div class="stgd" name="stgd" id="stgd" >Study Guide</div>
-        <div class="stgd_img" name="stgd_img" id="stgd_img">Study Guide Image</div>
-    </div>
+        <div class="fBox" id="stgd_container">
+            <div class="stgd" name="stgd" id="stgd" >Study Guide</div>
+            <div class="stgd_img" name="stgd_img" id="stgd_img">Study Guide Image</div>
+        </div>
 
 
-    <div class="fBox" name="splash" id="splash">Splash Image</div>
-
-
+        <div class="fBox" name="splash" id="splash" >Splash Image</div>
+    </form>
 </div>
 
 
 <form action="" method="POST" enctype="multipart/form-data">
-{% csrf_token %}
-    <div class="console" id="console">
-        <br>
-{#    {% csrf_token %}#}
+    {% csrf_token %}
+        <div class="console" id="console">
 
 
         <div>Show Name:<br>
+
             <input type="text" name="name" class="console_inp" id="name" placeholder="Play Title" required>
             <br>
             File Tree Title:<br>
@@ -80,7 +70,19 @@
 
         <button type="submit" value="Submit" id="go_button">And...GO!</button>
         <br>
-    </div>
+        </div>
 </form>
+
+
 </body>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'core/css/makerStyle.css' %}">
+    <style>@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+    @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Vollkorn');
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/core/js/maker.js"></script>
+    <title>Title</title>
+</head>
 </html>
