@@ -25,7 +25,10 @@ SECRET_KEY = '1i%j1c3t^lr@er-3+*b#yvpt)g035lom0+6fui6u66@ibipfi+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '165.227.30.15',
+    'www.ghostlightdtg.com',
+]
 
 
 # Application definition
