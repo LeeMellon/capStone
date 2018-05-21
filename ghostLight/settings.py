@@ -26,6 +26,7 @@ SECRET_KEY = '1i%j1c3t^lr@er-3+*b#yvpt)g035lom0+6fui6u66@ibipfi+'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     '165.227.30.15',
     'www.ghostlightdtg.com',
 ]
